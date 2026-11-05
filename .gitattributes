@@ -1,0 +1,9 @@
+* text=auto
+*.py text eol=lf
+*.swift text eol=lf
+*.command text eol=lf
+*.md text eol=lf
+*.yml text eol=lf
+*.json text eol=lf
+*.plist text eol=lf
+*.cmd text eol=crlf

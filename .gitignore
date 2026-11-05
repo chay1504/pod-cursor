@@ -1,0 +1,10 @@
+research/
+build/
+dist/
+__pycache__/
+*.pyc
+*.spec
+native/CaseMotion.app/
+.DS_Store
+*.log
+.venv/
