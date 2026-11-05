@@ -10,4 +10,4 @@ Official status and instructions: https://magicpods.app/magicaap/ . This is a de
 
 Even with a working driver, this app's Windows stream decoding and in-case behaviour need testing with the exact model/firmware. The adapter handles documented formats and rejects others; it cannot guarantee every AirPods model. No conventional earbuds are supported by this Apple-specific adapter.
 
-For a physical first test without this Windows driver issue, the provided Mac helper uses Apple's public motion API. It still requires a compatible model and an open case; its compilation and live operation remain unverified in this Windows session.
+For a physical first test without this Windows driver issue, the provided Mac helper uses Apple's public motion API. It has compiled successfully in GitHub Actions, but still requires compatible hardware, an open case and local permission testing. Live operation remains unverified.

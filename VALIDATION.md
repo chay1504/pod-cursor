@@ -9,6 +9,7 @@
 - All application Python modules passed compilation checks.
 - Mac permission plist parsed successfully with minimum version 14.0.
 - Both Mac shell scripts passed Bash syntax checks using the installed Git Bash.
+- GitHub Actions successfully compiled the Swift helper on a macOS runner and passed the core/protocol tests. The Windows runner passed the full 31-test suite. [Verified run](https://github.com/chay1504/pod-cursor/actions/runs/42029017422).
 - Windows read-only SetupAPI enumeration ran successfully and returned **0 connected MagicAAP interfaces** on the development machine. No sensor commands were sent in this check.
 - Windows PyInstaller build produced `dist/CaseMouse/CaseMouse.exe` with its `_internal` dependencies. No third-party Python runtime packages are required by the source application beyond standard-library Tkinter.
 
@@ -17,7 +18,7 @@
 - **No physical case has controlled the cursor in this session.** Hardware compatibility, real tap accuracy, noise thresholds, long-run stability and closed-lid operation are not verified.
 - No supported Windows sensor feed was available. The app-side AAP transport/commands are implemented but real driver I/O and in-case streaming need an exact device plus a working driver. The decoder's real-capture check does not validate Windows transport.
 - Automatic approval review rejected the packaged executable launch smoke check with only `blocked by policy`. It was not retried through another launcher. The Python-source GUI check passed; packaged binary launch remains unverified.
-- Mac native helper is provided as source, not a compiled Mac binary. No Swift/macOS SDK was available here, so compilation, permissions and live sensor/mouse operation were not tested. Bash and plist syntax checks are not a Mac build check.
+- Mac native helper is provided as source and compiled successfully in GitHub Actions. Runtime permissions, local app-bundle setup, real sensor streaming and mouse operation still need testing on a physical Mac; compilation does not establish those behaviours.
 - Case support for unnamed ordinary earbuds is not implemented or promised. Both sensor hardware and readable live protocol are required.
 - Additional gadgets in the guide are candidates for future adapters, not supported inputs of this build.
 

@@ -2,7 +2,7 @@
 
 This is a new project, separate from AirCursor. It has no camera, printed-marker input, face tracking, phone relay or simulated live sensor mode. Its purpose is the requested interaction: hold an earbud case, turn it to move the pointer, and tap it to left-click.
 
-**Honest status:** the Windows executable is built and the shared code has automated checks, including decoding recorded real sensor packets. No physical case has controlled the pointer in this session. This Windows PC has no connected MagicAAP sensor interface. The Mac helper is source code that must be compiled and tested on a Mac. These are material remaining requirements, not a completed hardware demonstration.
+**Status:** the Windows executable is built and the shared code has automated checks, including decoding recorded real sensor packets. GitHub Actions has compiled the Mac helper successfully. No physical case has controlled the pointer during validation. The Windows development machine has no connected MagicAAP sensor interface. Build the helper locally and test permissions and real sensor streaming on a physical Mac; CI compilation is not a hardware demonstration.
 
 ## How this route works
 
@@ -32,7 +32,7 @@ You need macOS 14+, compatible motion-capable earbuds, Python 3.10+ with Tkinter
 
 1. Copy/extract the source kit onto the Mac. In Terminal, enter `cd `, drag the `case-mouse` folder into Terminal, and press Return.
 2. If developer tools are missing, run `xcode-select --install` and complete Apple's installer.
-3. Run `bash Setup-Mac.command`. It compiles the sensor helper for the current Mac architecture and ad-hoc signs its app bundle. No developer account is needed for this local build. The build script and Swift source have not been executed on a Mac here.
+3. Run `bash Setup-Mac.command`. It compiles the sensor helper for the current Mac architecture and ad-hoc signs its app bundle. No developer account is needed for this local build. The Swift source has compiled on a macOS CI runner; the complete local setup and permission flow still require a physical Mac test.
 4. Run `bash Start-Mac.command` to open Case Mouse.
 5. Connect the earbuds to the Mac. Turn OFF **Automatic Ear Detection** in their settings. Keep both earbuds inside the case with its lid OPEN. Select the earbuds as the Mac's sound output. Another device must not take over their audio connection. Restore Automatic Ear Detection when finished if you normally use it.
 6. Click **Start sensor diagnostics** and allow the Motion permission prompt. Permission text explains why motion data is needed. You must see live samples before proceeding. If not, check the lid, model, audio route and Motion permission. Mac audio may be redirected into the earbuds; this initial app does not override the route for you or play keep-alive audio.
