@@ -2,11 +2,19 @@
 
 This is a **local Windows adaptation of the original closed-case AirPointer**, based on upstream commit `a73cc798e71a2e4c568f5a2ec8a351a58cd8e311`. The original Mac app and assets are preserved. This port uses the original `Sources/AirPointer/Session/Orientation.js` unchanged, translates the raw service-11/12 sensor protocol and closed-case diagnostic lifecycle, and translates the original tap detector. Andy Gao's MIT license in the repository root applies to the original code; retain it with this distribution.
 
+Shareable source: https://github.com/chay1504/pod-cursor/tree/windows-port . The repository's `main` branch remains only a pointer to the original Mac project. The Windows branch does not republish the original Mac assets.
+
+```powershell
+git clone --branch windows-port https://github.com/chay1504/pod-cursor.git
+cd pod-cursor
+```
+
 ## Actual status
 
 - Windows source and packaged GUI open and close successfully; **24 automated tests pass**.
 - Against the author's recorded fixture, the translated detector finds **15 of 15 held-case taps**, with zero clicks in the recorded handling/pointing segments. Lid-closing motion can look like a tap, so clicks are disabled until the user calibrates and enables them.
 - The original orientation math passes four additional offline assertions, both from source and from the packaged resources.
+- The 24 tests also passed on a fresh Windows GitHub Actions runner: https://github.com/chay1504/pod-cursor/actions/runs/42174082637 . CI is an offline check, not a physical sensor test.
 - The Windows computer used for development reports **zero connected MagicAAP interfaces**. **A live Windows AirPods/case connection has not been established or verified.** Passing offline tests is not evidence that this port works with a physical case.
 - This is not an official Windows release from the original author. The original's tested combination is AirPods Pro 3, Apple silicon and macOS 26; Pro 2 is recognized but untested even there. Generic earbuds are not supported by this protocol.
 

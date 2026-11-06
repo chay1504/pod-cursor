@@ -124,4 +124,3 @@ class Transport:
 
     def close(self):
         self.kernel.CloseHandle(self.handle)
-
